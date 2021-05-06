@@ -1,21 +1,66 @@
-import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { MaterialCommunityIcons } from '@expo/vector-icons';
 
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
+import Login from './controllers/Login';
+import Home from './controllers/Home';
+import AddFilm from './controllers/AddFilm'
+import Search from './controllers/Search';
+import Fragment from './controllers/Fragment';
+
+
+//const Stack = createStackNavigator();
+const Tab = createBottomTabNavigator();
+
+export default class App extends React.Component {
+  render() {
+    return (
+      <NavigationContainer>
+        <Tab.Navigator 
+         initialRouteName="Compte"
+         tabBarOptions={{
+           activeTintColor: '#e91e63',
+         }} >
+          <Tab.Screen
+            name="Compte"
+            component={Login}
+            options={{
+              tabBarLabel: 'Compte',
+              tabBarIcon: ({ color, size }) => (
+                <MaterialCommunityIcons name="account" color={color} size={size} />
+              ),
+            }} />
+          <Tab.Screen
+            name="Home"
+            component={Home}
+            options={{
+              tabBarLabel: 'Mes listes',
+              tabBarIcon: ({ color, size }) => (
+                <MaterialCommunityIcons name="format-list-bulleted" color={color} size={size} />
+              ), headerLeft: null
+            }} />
+          <Tab.Screen
+            name="AddFilm"
+            component={AddFilm}
+            options={{
+              tabBarLabel: 'Ajouter',
+              tabBarIcon: ({ color, size }) => (
+                <MaterialCommunityIcons name="playlist-plus" color={color} size={size} />
+              )
+            }} />
+            <Tab.Screen
+            name="Search"
+            component={Search}
+            options={{
+              tabBarLabel: 'Search',
+              tabBarIcon: ({ color, size }) => (
+                <MaterialCommunityIcons name="magnify" color={color} size={size} />
+              )
+            }} />
+        </Tab.Navigator>
+      </NavigationContainer>
+    )
+  }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
