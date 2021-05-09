@@ -9,7 +9,7 @@ import Home from './controllers/Home';
 import AddFilm from './controllers/AddFilm'
 import Search from './controllers/Search';
 import Fragment from './controllers/Fragment';
-
+import DetailsFilm from './controllers/DetailsFilm';
 
 //const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -58,6 +58,12 @@ export default class App extends React.Component {
               tabBarIcon: ({ color, size }) => (
                 <MaterialCommunityIcons name="magnify" color={color} size={size} />
               )
+            }} />
+            <Tab.Screen
+            name="DetailsFilm"
+            component={DetailsFilm}
+            options={{
+              tabBarLabel: 'Détail ',
             }} />
         </Tab.Navigator>
       </NavigationContainer>

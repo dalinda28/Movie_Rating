@@ -38,7 +38,7 @@ export default class DetailsFilm extends React.Component {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#ddd',
+        backgroundColor: 'black',
         alignItems: 'center',
         justifyContent: 'center',
     },
@@ -50,6 +50,7 @@ const styles = StyleSheet.create({
         margin: 20,
     },
     title: {
+        color: 'white',
         marginLeft: 20,
         marginTop: 10,
         marginBottom: 0,
