@@ -51,6 +51,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row'
   },
   title_text: {
+    color: 'white',
     fontWeight: 'bold',
     fontSize: 20,
     flex: 1,
@@ -58,21 +59,26 @@ const styles = StyleSheet.create({
     paddingRight: 5
   },
   vote_text: {
+    color: 'white',
     fontWeight: 'bold',
     fontSize: 26,
     color: '#666666'
   },
   description_container: {
+    color: 'white',
     flex: 7
   },
   description_text: {
+    color: 'white',
     fontStyle: 'italic',
     color: '#666666'
   },
   date_container: {
+    color: 'white',
     flex: 1
   },
   date_text: {
+    color: 'white',
     textAlign: 'right',
     fontSize: 14
   }

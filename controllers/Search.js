@@ -65,7 +65,7 @@ class Search extends React.Component{
                 <TextInput 
                     onChangeText={(text)=> this._searchTextInputChanged(text)}
                     onSubmitEditing={()  => this._searchFilms()} 
-                    style={styles.textinput} 
+                    style={styles.input}
                     placeholder="Titre du film"
                 />
                 <Button 
@@ -93,14 +93,15 @@ class Search extends React.Component{
 const styles = StyleSheet.create({
     main_container: {
         flex: 1,
+        backgroundColor:'black'
       },
-    textinput: {
-      marginLeft: 5,
-      marginRight: 5,
-      height: 50,
-      borderColor: '#000000',
-      borderWidth: 1,
-      paddingLeft: 5
+    input: {
+        color: 'white',
+        width: 300,
+        padding: 10,
+        margin: 20,
+        borderBottomColor: "white",
+        borderBottomWidth: 1
     },
     loading_container: {
         position: 'absolute',
